@@ -47,3 +47,21 @@
 .week::before{width:400px;height:290px;left:-100px;top:-28px}
 .week .section-heading{padding-top:78px}
 @media(max-width:700px){.week::before{width:190px;height:138px;left:-75px;top:-8px}.week .section-heading{padding-top:42px}}
+/* A softer scrapbook treatment for real venue photos and illustrations. */
+.card-photo{height:192px;margin:14px 14px 0;padding:6px;background:#f3ecdd;box-shadow:0 5px 16px #24382c18}
+.card-photo img{filter:saturate(.74) contrast(.92) sepia(.07)}
+.place-card:hover .card-photo img{filter:saturate(.86) contrast(.96) sepia(.04)}
+.photo-spark{top:10px;right:10px;background:#eee1c9;color:#9d493b;box-shadow:0 4px 10px #24382c24}
+.week::before,.explore::before,.holiday::before,.quote-band::before{filter:saturate(.56) contrast(.86) brightness(1.1)}
+.week::after{display:none}
+.quote-band{grid-template-columns:180px minmax(0,2fr) auto;gap:42px;align-items:center;min-height:335px}
+.quote-band::before{opacity:.32}
+.quote-art{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:11px;letter-spacing:.14em;line-height:1.4}
+.quote-art img{width:155px;height:200px;object-fit:contain;filter:saturate(.55) contrast(.85) brightness(1.08) drop-shadow(0 8px 8px #4b241f55);transform-origin:bottom center;animation:tree-sway 5.5s ease-in-out infinite alternate}
+.quote-art small{font-size:10px}
+.day-detail{transform-origin:left center;animation:turn-page .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes tree-sway{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+@keyframes turn-page{from{opacity:.55;transform:perspective(1000px) rotateY(-5deg) translateX(10px)}to{opacity:1;transform:perspective(1000px) rotateY(0) translateX(0)}}
+@media(max-width:1000px){.quote-band{grid-template-columns:140px 1fr;gap:25px}.quote-band a{grid-column:2}.quote-art img{width:125px;height:165px}}
+@media(max-width:700px){.card-photo{height:205px;margin:12px 12px 0}.quote-band{display:block;min-height:0}.quote-art{flex-direction:row;justify-content:flex-start;text-align:left;gap:16px}.quote-art img{width:80px;height:105px}.quote-art small{max-width:145px}.quote-band p{margin:20px 0 25px}}
+@media(prefers-reduced-motion:reduce){.quote-art img,.day-detail{animation:none}}
