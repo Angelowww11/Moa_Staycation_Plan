@@ -84,12 +84,12 @@
 @media(max-width:700px){.card-photo-label{left:16px;font-size:9px}.card-footer::before{right:20px}}
 
 /* Bring the generated parol and greenery into each photo card. */
-.card-garland{position:absolute;z-index:2;pointer-events:none;top:-16px;right:-10px;width:112px;height:76px;background:url('./assets/christmas-garland.webp') left top/contain no-repeat;filter:saturate(.7) contrast(.9) drop-shadow(0 3px 3px #19352f4d);transform-origin:78% 0;animation:card-ornament-sway 5s ease-in-out infinite alternate}
+.card-garland{position:absolute;z-index:2;pointer-events:none;top:-16px;left:-10px;width:112px;height:76px;background:url('./assets/christmas-garland.webp') left top/contain no-repeat;filter:saturate(.7) contrast(.9) drop-shadow(0 3px 3px #19352f4d);transform-origin:22% 0;animation:card-ornament-sway 5s ease-in-out infinite alternate}
 .place-card:nth-child(3n+2) .card-garland{animation-delay:-1.7s}
 .place-card:nth-child(3n+3) .card-garland{animation-delay:-3.4s}
 .card-photo-label{z-index:3}
 @keyframes card-ornament-sway{from{transform:rotate(-3deg)}to{transform:rotate(2deg)}}
-@media(max-width:700px){.card-garland{width:104px;height:71px;top:-14px;right:-8px}}
+@media(max-width:700px){.card-garland{width:104px;height:71px;top:-14px;left:-8px}}
 @media(prefers-reduced-motion:reduce){.card-garland{animation:none}}
 
 /* A quick, scrollable list for comparing every stop. */
