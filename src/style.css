@@ -23,3 +23,27 @@
 @media(max-width:700px){.hero-sticker{width:108px;height:108px;right:15px;bottom:42px}.hero-sticker span{font-size:22px}.hero-sticker strong{font-size:11px}.hero-sticker small{font-size:10px}.hero-bottom{bottom:23px;right:135px}.hero-bottom span:last-child{display:none}.site-shell{padding-bottom:65px}.mobile-nav{display:flex;position:fixed;z-index:50;bottom:0;left:0;right:0;height:64px;background:#103b33;color:#fff3dd;box-shadow:0 -6px 20px #0d2e2a2e;justify-content:space-around;align-items:center}.mobile-nav a{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;font-size:10px;min-width:75px}.mobile-nav a:focus-visible{outline-offset:-3px}.card-photo{height:210px}.place-card{border-radius:5px}.card-body h3{font-size:30px}.fireworks-warning{margin-top:20px}}
 @media(prefers-reduced-motion:reduce){.card-photo img{transition:none}}
 @media(max-width:700px){.hero-sticker{bottom:110px}.hero-bottom{bottom:82px}}
+/* Illustrated Christmas scrapbook layers */
+.week,.explore,.holiday,.quote-band,.budget{position:relative;isolation:isolate}
+.week::before,.explore::before,.holiday::before,.quote-band::before{content:"";position:absolute;z-index:-1;pointer-events:none;background:url('./assets/christmas-garland.webp') left top/contain no-repeat}
+.week::before{width:570px;height:405px;left:-65px;top:-35px;opacity:.92}
+.week::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:205px;height:300px;left:calc(8vw + 15%);bottom:30px;background:url('./assets/christmas-tree.webp') center/contain no-repeat;filter:drop-shadow(0 14px 14px #21432b40);animation:tree-glow 5s ease-in-out infinite alternate}
+.explore::before{width:410px;height:295px;right:-45px;top:-15px;transform:scaleX(-1);opacity:.88}
+.holiday::before{width:320px;height:220px;right:-20px;top:-10px;transform:scaleX(-1);opacity:.78}
+.quote-band::before{width:320px;height:225px;left:-45px;top:-18px;opacity:.6}
+.quote-band{overflow:hidden}
+.week .section-heading,.explore .section-heading,.holiday>div,.week-grid,.toolbar,.cards,.budget-grid{position:relative;z-index:1}
+.week .section-heading{padding-top:85px}
+.explore .section-heading{padding-top:38px}
+.hero-sticker{animation:sticker-wobble 5s ease-in-out infinite alternate}
+.photo-spark{animation:sparkle-turn 6s ease-in-out infinite alternate}
+@keyframes tree-glow{from{filter:drop-shadow(0 10px 12px #21432b38)}to{filter:drop-shadow(0 8px 22px #eec16f9c)}}
+@keyframes sticker-wobble{from{transform:rotate(10deg)}to{transform:rotate(16deg)}}
+@keyframes sparkle-turn{from{transform:rotate(-14deg) scale(.96)}to{transform:rotate(8deg) scale(1.04)}}
+@media(max-width:1000px){.week::after{display:none}}
+@media(max-width:700px){.week::before{width:265px;height:190px;left:-75px;top:-8px;opacity:.7}.week .section-heading{padding-top:48px}.explore::before{width:245px;height:175px;right:-90px;top:-10px;opacity:.65}.explore .section-heading{padding-top:30px}.holiday::before{width:210px;height:155px;right:-65px;top:0;opacity:.45}.quote-band::before{width:190px;height:140px;left:-55px;top:-8px;opacity:.45}}
+@media(prefers-reduced-motion:reduce){.hero-sticker,.photo-spark,.week::after{animation:none}}
+/* Keep the illustrated corners clear of the copy. */
+.week::before{width:400px;height:290px;left:-100px;top:-28px}
+.week .section-heading{padding-top:78px}
+@media(max-width:700px){.week::before{width:190px;height:138px;left:-75px;top:-8px}.week .section-heading{padding-top:42px}}
