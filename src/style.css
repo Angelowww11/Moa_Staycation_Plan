@@ -82,3 +82,42 @@
 .place-card.card-activity .card-footer a{color:#8c3b52}
 .place-card.card-food .card-footer a{color:#9a4d28}
 @media(max-width:700px){.card-photo-label{left:16px;font-size:9px}.card-footer::before{right:20px}}
+
+/* Bring the generated parol and greenery into each photo card. */
+.card-garland{position:absolute;z-index:2;pointer-events:none;top:-16px;right:-10px;width:112px;height:76px;background:url('./assets/christmas-garland.webp') left top/contain no-repeat;filter:saturate(.7) contrast(.9) drop-shadow(0 3px 3px #19352f4d);transform-origin:78% 0;animation:card-ornament-sway 5s ease-in-out infinite alternate}
+.place-card:nth-child(3n+2) .card-garland{animation-delay:-1.7s}
+.place-card:nth-child(3n+3) .card-garland{animation-delay:-3.4s}
+.card-photo-label{z-index:3}
+@keyframes card-ornament-sway{from{transform:rotate(-3deg)}to{transform:rotate(2deg)}}
+@media(max-width:700px){.card-garland{width:104px;height:71px;top:-14px;right:-8px}}
+@media(prefers-reduced-motion:reduce){.card-garland{animation:none}}
+
+/* A quick, scrollable list for comparing every stop. */
+.summary-trigger{position:fixed;z-index:60;left:23px;bottom:22px;display:flex;align-items:center;gap:10px;padding:13px 18px;background:#a13e37;color:#fff8e8;border:1px solid #e0ba81;border-radius:999px;box-shadow:0 9px 24px #162d2a40;font-size:13px;font-weight:700;transition:transform .2s,box-shadow .2s}
+.summary-trigger:hover{transform:translateY(-3px);box-shadow:0 13px 28px #162d2a4d}
+.summary-backdrop{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:#092a27bf;padding:20px;animation:summary-fade .2s ease-out}
+.summary-dialog{width:min(690px,100%);max-height:min(790px,calc(100dvh - 40px));display:flex;flex-direction:column;background:#fffaf0;color:#19352f;border:1px solid #d2ae76;box-shadow:0 25px 80px #08262288;animation:summary-rise .25s cubic-bezier(.2,.8,.2,1)}
+.summary-head{display:flex;flex:none;justify-content:space-between;gap:20px;padding:27px 32px 22px;background:#123c34;color:#fff5e2;position:relative;overflow:hidden}
+.summary-head::after{content:"";position:absolute;right:28px;top:-35px;width:165px;height:110px;background:url('./assets/christmas-garland.webp') left top/contain no-repeat;opacity:.35;pointer-events:none}
+.summary-head>div,.summary-close{position:relative;z-index:1}
+.summary-head .section-label{color:#e4bd82;margin:0 0 9px}
+.summary-head h2{font:400 39px/1.1 'Fraunces',serif;letter-spacing:-.035em;margin:0}
+.summary-head p{font-size:12px;color:#d4e2d6;margin:10px 0 0}
+.summary-close{align-self:start;flex:none;display:grid;place-items:center;width:36px;height:36px;background:#ffffff1c;color:#fff5e2;border:1px solid #ffffff66;border-radius:50%}
+.summary-scroll{overflow:auto;flex:1;min-height:0;overscroll-behavior:contain}
+.summary-scroll table{border-collapse:collapse;width:100%;font-size:12px}
+.summary-scroll thead{position:sticky;top:0;z-index:2;background:#eadfca;color:#345248}
+.summary-scroll th,.summary-scroll td{padding:11px 19px;text-align:left;border-bottom:1px solid #e9e3d5;vertical-align:top}
+.summary-scroll thead th{font-size:10px;text-transform:uppercase;letter-spacing:.11em}
+.summary-scroll th:last-child,.summary-scroll td:last-child{text-align:right;white-space:nowrap}
+.summary-scroll td:first-child{color:#7d897a;width:90px}
+.summary-scroll td:nth-child(2){font-weight:700}
+.summary-scroll td a{display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid transparent}
+.summary-scroll td a:hover{border-color:#a13e37;color:#a13e37}
+.summary-scroll td small{display:block;font-size:10px;font-weight:400;color:#718477;margin-top:3px}
+.summary-group th{background:#f1e5d2;color:#a04438;font:700 10px 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.14em;padding-top:10px;padding-bottom:10px;text-align:left!important}
+.summary-foot{flex:none;padding:15px 32px;background:#f5eddc;color:#566e60;font-size:11px;line-height:1.5}
+@keyframes summary-fade{from{opacity:0}to{opacity:1}}
+@keyframes summary-rise{from{opacity:.5;transform:translateY(12px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:700px){.summary-trigger{left:14px;bottom:76px;padding:10px 13px;font-size:11px;gap:7px}.summary-trigger svg{width:16px;height:16px}.summary-backdrop{padding:10px}.summary-dialog{max-height:calc(100dvh - 20px)}.summary-head{padding:21px 20px 18px}.summary-head h2{font-size:32px}.summary-scroll th,.summary-scroll td{padding:10px 9px}.summary-scroll td:first-child{width:65px;font-size:10px}.summary-scroll td:last-child{font-size:11px;white-space:normal;min-width:93px}.summary-foot{padding:12px 20px}}
+@media(prefers-reduced-motion:reduce){.summary-trigger,.summary-backdrop,.summary-dialog{animation:none;transition:none}}
