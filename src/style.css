@@ -65,3 +65,20 @@
 @media(max-width:1000px){.quote-band{grid-template-columns:140px 1fr;gap:25px}.quote-band a{grid-column:2}.quote-art img{width:125px;height:165px}}
 @media(max-width:700px){.card-photo{height:205px;margin:12px 12px 0}.quote-band{display:block;min-height:0}.quote-art{flex-direction:row;justify-content:flex-start;text-align:left;gap:16px}.quote-art img{width:80px;height:105px}.quote-art small{max-width:145px}.quote-band p{margin:20px 0 25px}}
 @media(prefers-reduced-motion:reduce){.quote-art img,.day-detail{animation:none}}
+/* A small illustrated label on every card, with a distinct palette by stop type. */
+.place-card{--card-ink:#8d3f38;--card-paper:#f4e4cf;--card-flower:#c8a36b}
+.place-card.card-place{--card-ink:#246052;--card-paper:#e1eee2;--card-flower:#9cac7e}
+.place-card.card-activity{--card-ink:#8c3b52;--card-paper:#f4e1e7;--card-flower:#c48693}
+.place-card.card-food{--card-ink:#9a4d28;--card-paper:#fae9d1;--card-flower:#d7a558}
+.card-photo{overflow:visible}
+.card-photo img{border-radius:2px}
+.card-photo-label{position:absolute;z-index:1;bottom:-12px;left:19px;background:var(--card-paper);color:var(--card-ink);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1;padding:10px 13px 9px;transform:rotate(-3deg);box-shadow:0 3px 9px #342d231f;max-width:calc(100% - 65px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-photo-label span{color:var(--card-flower);font-size:15px;vertical-align:-2px;margin-right:3px}
+.photo-spark{background:var(--card-paper);color:var(--card-ink);border:2px solid #fff9ee}
+.card-meta{padding-top:9px}
+.card-footer{position:relative}
+.card-footer::before{content:"✳";position:absolute;right:21px;top:-19px;color:var(--card-flower);background:#fffdf7;padding:0 5px;font:18px Georgia,serif}
+.place-card.card-place .card-footer a{color:#246052}
+.place-card.card-activity .card-footer a{color:#8c3b52}
+.place-card.card-food .card-footer a{color:#9a4d28}
+@media(max-width:700px){.card-photo-label{left:16px;font-size:9px}.card-footer::before{right:20px}}
